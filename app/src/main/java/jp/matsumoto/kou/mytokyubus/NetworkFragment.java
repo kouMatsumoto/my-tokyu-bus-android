@@ -8,6 +8,10 @@ import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.util.Log;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -109,6 +113,12 @@ public class NetworkFragment extends Fragment {
             public Exception mException;
             public Result(String resultValue) {
                 mResultValue = resultValue;
+                try {
+                    JSONObject json = new JSONObject(resultValue);
+                    Log.d("json", "");
+                } catch (Exception e) {
+
+                }
             }
             public Result(Exception exception) {
                 mException = exception;
@@ -142,9 +152,9 @@ public class NetworkFragment extends Fragment {
                 String urlString = urls[0];
                 try {
                     URL url = new URL(urlString);
-                    String resultString = downloadUrl(url);
-                    if (resultString != null) {
-                        result = new Result(resultString);
+                    String resultJSONString = downloadUrl(url);
+                    if (resultJSONString != null) {
+                        result = new Result(resultJSONString);
                     } else {
                         throw new IOException("No response received.");
                     }

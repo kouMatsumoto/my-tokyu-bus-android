@@ -16,11 +16,12 @@ public class MainActivity extends FragmentActivity implements DownloadCallback<S
 
     /** Called when the user taps the Send button */
     public void sendMessage(View view) {
-        Intent intent = new Intent(this, DisplayMessageActivity.class);
-        EditText editText = (EditText) findViewById(R.id.editText);
-        String message = editText.getText().toString();
-        intent.putExtra(EXTRA_MESSAGE, message);
-        startActivity(intent);
+          startDownload();
+//        Intent intent = new Intent(this, DisplayMessageActivity.class);
+//        EditText editText = (EditText) findViewById(R.id.editText);
+//        String message = editText.getText().toString();
+//        intent.putExtra(EXTRA_MESSAGE, message);
+//        startActivity(intent);
     }
 
 
@@ -38,7 +39,7 @@ public class MainActivity extends FragmentActivity implements DownloadCallback<S
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mNetworkFragment = NetworkFragment.getInstance(getFragmentManager(), "https://www.google.com");
+        mNetworkFragment = NetworkFragment.getInstance(getFragmentManager(), "https://my-tokyu-bus.tokyo/api/?from=2598&to=2336");
     }
 
     private void startDownload() {
