@@ -18,7 +18,6 @@ import javax.net.ssl.HttpsURLConnection;
 
 public class NetworkFragment extends Fragment {
     public static final String TAG = "NetworkFragment";
-
     private static final String URL_KEY = "UrlKey";
 
     private DownloadCallback mCallback;
@@ -209,8 +208,8 @@ public class NetworkFragment extends Fragment {
                 stream = connection.getInputStream();
                 publishProgress(DownloadCallback.Progress.GET_INPUT_STREAM_SUCCESS, 0);
                 if (stream != null) {
-                    // Converts Stream to String with max length of 500.
-                    result = readStream(stream, 500);
+                    // Converts Stream to String with max length of 3000.
+                    result = readStream(stream, 3000);
                 }
             } finally {
                 // Close Stream and disconnect HTTPS connection.
