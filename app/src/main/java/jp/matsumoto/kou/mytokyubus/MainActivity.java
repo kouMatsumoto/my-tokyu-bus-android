@@ -1,16 +1,13 @@
 package jp.matsumoto.kou.mytokyubus;
 
 import android.content.Context;
-import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
-
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.EditText;
 
-public class MainActivity extends FragmentActivity implements DownloadCallback<String> {
+public class MainActivity extends AppCompatActivity implements DownloadCallback<String> {
 
     public static final String EXTRA_MESSAGE = "jp.matsumoto.kou.mytokyubus.MESSAGE";
 
