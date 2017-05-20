@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements DownloadCallback<String> {
 
@@ -43,6 +44,14 @@ public class MainActivity extends AppCompatActivity implements DownloadCallback<
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
     }
+
+    // manage textView to display result
+    private void updateResultText(Boolean visibility, String text) {
+        TextView textView = (TextView) findViewById(R.id.text_result);
+        textView.setVisibility(visibility ? View.VISIBLE : View.INVISIBLE);
+        textView.setText(text);
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
