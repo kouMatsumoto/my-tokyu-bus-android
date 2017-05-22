@@ -18,7 +18,7 @@ public interface DownloadCallback<T> {
     void updateFromDownload(T result);
 
     /**
-     * Get the device's active network status in the form of a NetwordInfo object.
+     * Get the device's active network status in the form of a NetworkInfo object.
      */
     NetworkInfo getActiveNetworkInfo();
 
