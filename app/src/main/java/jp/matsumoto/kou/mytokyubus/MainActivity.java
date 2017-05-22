@@ -17,11 +17,6 @@ public class MainActivity extends AppCompatActivity implements DownloadCallback<
     /** Called when the user taps the Send button */
     public void sendMessage(View view) {
           startDownload();
-//        Intent intent = new Intent(this, DisplayMessageActivity.class);
-//        EditText editText = (EditText) findViewById(R.id.editText);
-//        String message = editText.getText().toString();
-//        intent.putExtra(EXTRA_MESSAGE, message);
-//        startActivity(intent);
     }
 
 
@@ -75,6 +70,7 @@ public class MainActivity extends AppCompatActivity implements DownloadCallback<
     @Override
     public void updateFromDownload(String result) {
         // Update your UI here based on result of download.
+        updateResultText(true, "test");
     }
 
     @Override

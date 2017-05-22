@@ -24,7 +24,7 @@ public class NetworkFragment extends Fragment {
     public static final String TAG = "NetworkFragment";
     private static final String URL_KEY = "UrlKey";
 
-    private DownloadCallback mCallback;
+    private DownloadCallback<String> mCallback;
     private DownloadTask mDownloadTask;
     private String mUrlString;
 
@@ -52,7 +52,7 @@ public class NetworkFragment extends Fragment {
     public void onAttach(Context context) {
         super.onAttach(context);
         // Host Activity will handle callbacks from task.
-        mCallback = (DownloadCallback) context;
+        mCallback = (DownloadCallback<String>) context;
     }
 
     @Override
